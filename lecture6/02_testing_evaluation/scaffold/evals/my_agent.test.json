@@ -1,0 +1,23 @@
+{
+  "eval_set_id": "my_agent_golden",
+  "name": "Golden dataset",
+  "description": "TODO: add happy path, edge and negative cases for your agent.",
+  "eval_cases": [
+    {
+      "eval_id": "happy_path_example",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {"role": "user", "parts": [{"text": "Plan a 3 day trip to Vienna."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "weather_agent", "args": {}},
+              {"name": "activity_advisor", "args": {}}
+            ]
+          }
+        }
+      ],
+      "session_input": {"app_name": "my_agent", "user_id": "eval_user", "state": {}}
+    }
+  ]
+}
