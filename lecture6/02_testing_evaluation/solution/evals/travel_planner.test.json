@@ -1,0 +1,55 @@
+{
+  "eval_set_id": "travel_planner_golden",
+  "name": "Travel planner golden dataset",
+  "description": "Happy path and edge cases for the structured travel planner.",
+  "eval_cases": [
+    {
+      "eval_id": "happy_path_vienna_3_days",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {"role": "user", "parts": [{"text": "Plan a 3 day trip to Vienna."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "weather_agent", "args": {}},
+              {"name": "activity_advisor", "args": {}}
+            ]
+          }
+        }
+      ],
+      "session_input": {"app_name": "travel_planner", "user_id": "eval_user", "state": {}}
+    },
+    {
+      "eval_id": "edge_german_prompt_one_day",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {"role": "user", "parts": [{"text": "Ich bin morgen in Graz. Was kann ich machen?"}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "weather_agent", "args": {}},
+              {"name": "activity_advisor", "args": {}}
+            ]
+          }
+        }
+      ],
+      "session_input": {"app_name": "travel_planner", "user_id": "eval_user", "state": {}}
+    },
+    {
+      "eval_id": "edge_user_preference_no_museums",
+      "conversation": [
+        {
+          "invocation_id": "inv-1",
+          "user_content": {"role": "user", "parts": [{"text": "Weekend in Innsbruck, 2 days. I hate museums, I want to be outside."}]},
+          "intermediate_data": {
+            "tool_uses": [
+              {"name": "weather_agent", "args": {}},
+              {"name": "activity_advisor", "args": {}}
+            ]
+          }
+        }
+      ],
+      "session_input": {"app_name": "travel_planner", "user_id": "eval_user", "state": {}}
+    }
+  ]
+}
